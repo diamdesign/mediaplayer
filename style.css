@@ -1,5 +1,6 @@
 :root {
-	--main: rgba(47, 47, 78, 0.9);
+	--main: rgba(49, 49, 67, 0.5);
+	--full: rgb(49, 49, 67);
 }
 
 * {
@@ -39,6 +40,7 @@ body {
 }
 
 header {
+	background-color: var(--full);
 	text-align: center;
 	line-height: 4rem;
 }
@@ -46,6 +48,31 @@ header {
 header h1 {
 	font-weight: 500;
 	font-size: 1.4rem;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.btn-back,
+.submenu {
+	width: 4rem;
+	height: 4rem;
+}
+
+.btn-back span,
+.submenu span {
+	font-size: 28px;
+	line-height: 4rem;
+}
+
+.btn-back {
+	float: left;
+}
+
+.submenu {
+	float: right;
 }
 
 .flexcolumn {
@@ -57,9 +84,12 @@ header h1 {
 
 .playlist {
 	flex: 50%;
+
+	border-right: 6px solid rgba(255, 255, 255, 0.5);
 }
 
 .player {
+	padding: 2rem;
 	flex: 50%;
 }
 
@@ -70,6 +100,7 @@ header h1 {
 	margin-right: auto;
 	display: block;
 	overflow: hidden;
+	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.4);
 }
 .thumb img {
 	width: 100%;
