@@ -34,9 +34,11 @@ body {
 }
 .mediaplayer {
 	width: 100%;
-	max-height: 100%;
+	height: 100%;
+	max-height: 880px;
 	max-width: 1024px;
 	background-color: var(--main);
+	position: relative;
 }
 
 header {
@@ -68,6 +70,7 @@ a {
 }
 
 .btn-back {
+	margin-left: 10px;
 	float: left;
 }
 
@@ -79,18 +82,80 @@ a {
 	display: flex;
 	align-content: space-between;
 	flex-direction: row;
-	height: 100%;
+	height: calc(100% - 4rem);
 }
 
 .playlist {
+	overflow-y: hidden;
 	flex: 50%;
-
 	border-right: 6px solid rgba(255, 255, 255, 0.5);
 }
 
 .player {
 	padding: 2rem;
 	flex: 50%;
+}
+
+.list {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.list::-webkit-scrollbar {
+	width: 0px; /* Adjust as needed */
+}
+
+.list::-webkit-scrollbar-thumb {
+	background-color: transparent !important;
+}
+
+.list {
+	scrollbar-color: transparent transparent !important; /* thumb color and track color */
+}
+
+.list .list-contain {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: left;
+	padding: 20px 30px;
+}
+
+.list .list-contain:hover {
+	cursor: pointer;
+}
+
+.list .list-contain .info {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: 20px;
+}
+
+.list .list-contain .info h4 {
+	font-size: 1.6rem;
+	font-weight: 500;
+	display: block;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	width: 100%;
+}
+
+.list .list-contain .info span {
+	font-size: 1.3rem;
+	display: block;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	width: 100%;
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.list .list-contain .arrow {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.list .list-contain .arrow span {
+	font-size: 28px;
 }
 
 .thumb {
@@ -102,7 +167,23 @@ a {
 	overflow: hidden;
 	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.4);
 }
+
 .thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.list-thumb {
+	padding: 0;
+	aspect-ratio: 1;
+	max-width: 80px;
+	display: block;
+	overflow: hidden;
+	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+.list-thumb img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
