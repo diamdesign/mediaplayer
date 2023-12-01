@@ -114,11 +114,17 @@ a {
 }
 
 .list .list-contain {
+	background-color: var(--full);
 	display: flex;
 	flex-wrap: wrap;
 	text-align: left;
 	padding: 20px 30px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 	justify-content: space-between;
+}
+
+.list .active {
+	background-color: var(--main) !important;
 }
 
 .list .list-contain:hover {
@@ -153,9 +159,17 @@ a {
 .list .list-contain .arrow {
 	display: flex;
 	align-items: center;
+	opacity: 0.2;
+	mix-blend-mode: luminosity;
 }
+
 .list .list-contain .arrow span {
 	font-size: 28px;
+}
+
+.list .active .arrow,
+.list .list-contain:hover .arrow {
+	opacity: 1;
 }
 
 .list .list-contain .first {
